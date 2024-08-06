@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+/* import { PaymentElement, Elements, ElementsConsumer } from '@stripe/react-stripe-js'
+import { loadStripe } from '@stripe/stripe-js'
+
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
+const stripePromise = loadStripe(
+  'pk_live_51I0wy5GcQijtO7SqUWQGseD5or9hjgEE7XGfNHGmXGtCM18dYDo62BN2VIM7YqT9VvQFPyCYhI0yrg9aBrGi21200004koSbFw'
+) */
