@@ -73,7 +73,7 @@ const App: React.FC = () => {
         <Info>Cảm ơn bạn thật nhiều nhé! 🥰 Quyên góp của bạn sẽ làm cho mọi thứ trở nên thật tuyệt vời! 🌟</Info>
 
         <SupportButton backgroundColor={dynamicButtonColor} onClick={toggleModal}>
-          Ủng Hộ Thôi Nào! 🌈
+          Ủng Hộ Cui Nhaa! 🌈
         </SupportButton>
 
         <BlinkingContainer>
