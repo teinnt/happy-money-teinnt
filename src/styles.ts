@@ -72,6 +72,12 @@ export const Info = styled.p`
   animation: ${glowAnimation} 2s ease-in-out infinite alternate; /* Glowing effect */
 `
 
+// Function to generate a darker color based on HSL values
+const darkenPastelColor = (color: string) => {
+  const hsl = color.match(/\d+/g)!.map(Number)
+  return `hsl(${hsl[0]}, ${hsl[1]}%, ${Math.max(hsl[2] - 20, 0)}%)`
+}
+
 // Submit button with dynamic pastel background and fantasy style
 interface SupportButtonProps {
   backgroundColor: string
@@ -80,7 +86,7 @@ interface SupportButtonProps {
 export const SupportButton = styled.button<SupportButtonProps>`
   font-size: 1.5em;
   color: #fff; /* White text */
-  background: ${(props) => props.backgroundColor}; /* Dynamic pastel background color */
+  background: ${(props) => darkenPastelColor(props.backgroundColor)}; /* Darken dynamic pastel background color */
   padding: 15px 30px;
   border: none;
   border-radius: 10px;
@@ -88,14 +94,15 @@ export const SupportButton = styled.button<SupportButtonProps>`
   transition: background 0.5s, transform 0.3s, box-shadow 0.3s;
 
   &:hover {
-    background: ${(props) => props.backgroundColor}; /* Keep the dynamic pastel background on hover */
+    background: ${(props) =>
+      darkenPastelColor(props.backgroundColor)}; /* Keep the darkened pastel background on hover */
     transform: scale(1.05); /* Slight scale effect on hover */
-    box-shadow: 0 0 15px ${(props) => props.backgroundColor}; /* Glowing effect on hover */
+    box-shadow: 0 0 15px ${(props) => darkenPastelColor(props.backgroundColor)}; /* Glowing effect on hover */
   }
 
   &:active {
     transform: scale(0.95); /* Slight shrink effect when clicked */
-    box-shadow: 0 0 10px ${(props) => props.backgroundColor}; /* Glowing effect on click */
+    box-shadow: 0 0 10px ${(props) => darkenPastelColor(props.backgroundColor)}; /* Glowing effect on click */
   }
 `
 
@@ -152,7 +159,7 @@ export const Modal = styled.div<ModalProps>`
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: linear-gradient(135deg, rgba(255, 0, 150, 0.8), rgba(0, 204, 255, 0.8));
 `
 
 export const ModalContent = styled.div`
@@ -164,12 +171,15 @@ export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  width: 90%;
+  max-width: 500px; /* Ensure the modal is responsive */
 `
 
 export const ModalButton = styled.button`
-  font-size: 1.2em;
-  margin: 10px;
-  padding: 10px 20px;
+  font-size: 1.5em;
+  margin: 15px;
+  padding: 15px 30px;
   color: #fff;
   background: #ff69b4; /* Hot pink */
   border: none;
@@ -187,6 +197,7 @@ export const ModalButton = styled.button`
   }
 `
 
+// Close button styles
 export const CloseButton = styled.button`
   position: absolute;
   top: 10px;
@@ -202,6 +213,7 @@ export const CloseButton = styled.button`
   }
 `
 
+// Bank info text
 export const BankInfo = styled.p`
   font-size: 1.2em;
   color: #333; /* Dark color for better contrast */

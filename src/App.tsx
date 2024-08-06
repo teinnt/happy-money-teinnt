@@ -73,7 +73,7 @@ const App: React.FC = () => {
         <Info>Cảm ơn bạn thật nhiều nhé! 🥰 Quyên góp của bạn sẽ làm cho mọi thứ trở nên thật tuyệt vời! 🌟</Info>
 
         <SupportButton backgroundColor={dynamicButtonColor} onClick={toggleModal}>
-          Ủng Hộ Cui Nhaa! 🌈
+          Ủng Hộ Ở Đây 🌈
         </SupportButton>
 
         <BlinkingContainer>
@@ -95,11 +95,22 @@ const App: React.FC = () => {
               <ModalButton onClick={handleBankCardClick}>Bank Card</ModalButton>
             </>
           ) : (
-            <>
+            <div>
               <BankInfo>Sacombank</BankInfo>
               <BankInfo>060313761889</BankInfo>
               <BankInfo>Trần Thị Phương Thảo</BankInfo>
-            </>
+              <img
+                src="./img/bank-qr-code.jpg"
+                alt="QR Code"
+                style={{
+                  marginTop: '20px',
+                  width: '100%',
+                  maxWidth: '350px',
+                  borderRadius: '15px',
+                  boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
+                }}
+              />
+            </div>
           )}
         </ModalContent>
       </Modal>
